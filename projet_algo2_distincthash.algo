@@ -1,0 +1,29 @@
+ALGORITHM communHash
+VAR
+    a,b : ARRAY_OF INTEGER[];
+    sum : INTEGER := 0 ;
+    c : HASH_TABLE<INTEGER ,INTEGER>
+BEGIN
+    a := [3,1,7,9];
+    b := [2,4,1,9,3];
+
+
+    FOR i FROM 1 TO a.lenght STEP 1  DO
+        c.insert (a[i],1);
+    END_FOR
+
+    FOR i FROM 1 TO b.lenght STEP 1  DO
+        IF (c.lookup( b[i] = TRUE)) THEN
+            c.insert ( b[i],2);
+        ELSE
+            c.insert(b[i,1]);
+        END_IF
+    END_FOR
+
+    FOR i FROM 1 TO a.lenght STEP 1  DO
+        IF (c.get ( a[i]=1)) THEN
+            sum = sum +a[i];
+        END_IF
+    END_FOR
+  write ("la somme  des nbrs distincthash est",sum);
+END

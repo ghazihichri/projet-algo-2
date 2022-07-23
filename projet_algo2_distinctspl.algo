@@ -1,0 +1,40 @@
+ALGORITHM distinctSimple
+VAR
+    a,b : ARRAY_OF INTEGER[];
+    verif : BOOLEAN := FALSE ;
+    sum : INTEGER := 0 ;
+BEGIN
+   a := [3,1,7,9];
+   b:= [2,4,1,9,3];
+  
+ FOR i FROM 1 TO a.lenght STEP 1  DO
+    verif := FALSE;
+    FOR j FROM 1 TO b.lenght STEP 1  DO
+        if ( a[i]=b[j]) THEN
+         verif := TRUE ;
+        END_IF
+    END_FOR
+
+    IF (verif = FALSE) THEN
+        
+        sum := sum + a[i];
+    END_IF
+
+
+ END_FOR
+
+ FOR j FROM 1 TO b.lenght STEP 1  DO
+    verif := FALSE;
+    FOR i FROM 1 TO a.lenght STEP 1  DO
+        IF (b[j] = a[i]) THEN
+            verif := TRUE;
+        END_IF
+    END_FOR
+    IF (verif = FALSE) THEN
+        sum := sum + b[i]
+    END_IF
+ END_FOR
+ write ("la somme  des nbrs distinctS est",sum);
+
+
+END

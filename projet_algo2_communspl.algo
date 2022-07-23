@@ -1,0 +1,23 @@
+ALGORITHM communSimple
+VAR
+   a,b : ARRAY_OF INTEGER [];
+   sum : INTEGER := 0;
+BEGIN
+   a := [3,1,7,9];
+   b:= [2,4,1,9,3];
+
+ FOR i FROM 1 TO a.lenght STEP 1  DO
+    
+
+    FOR j FROM 1 TO b.lenght STEP 1  DO
+      
+      IF (a[i]= b[j]) THEN
+        sum := sum + a[i]*2;
+
+      END_IF
+    END_FOR
+ END_FOR
+
+write ("la somme  des nbrs communS est",sum);
+
+END
